@@ -1,261 +1,317 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>RFJ - WEB DEVELOPER</title>
 
-    <title>RFJ - WEB DEVELOPER</title>
+<style>
+  /* =============================================
+     FIX 1: Nombre superpuesto
+     El h1 y h2.nombre-completo estaban colisionando
+     durante la animación. Se asegura z-index y
+     visibilidad controlada.
+  ============================================= */
+
+  /* El h1 dentro de .info empieza invisible y aparece
+     cuando JS le agrega la clase .visible */
+  .inicio .info h1 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .inicio .info h1.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* El .logo y .nombre-completo en el header no deben
+     solaparse con el bloque .info del hero */
+  .inicio header {
+    position: relative;
+    z-index: 10;
+  }
+  .inicio .info {
+    position: relative;
+    z-index: 5;
+  }
+
+  /* =============================================
+     FIX 2: Formulario con placeholders internos
+     Se eliminan los <label> externos y se reemplaza
+     por inputs con placeholder + estilo transparente
+  ============================================= */
+
+  .formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Se ocultan los label originales para usar solo placeholder */
+  .form-row label {
+    display: none;
+  }
+
+  .formulario-contacto input[type="text"],
+  .formulario-contacto input[type="email"],
+  .formulario-contacto textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    font-size: 1rem;
+    padding: 12px 4px;
+    width: 100%;
+    outline: none;
+    border-radius: 0;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+    resize: vertical;
+  }
+
+  .formulario-contacto input[type="text"]::placeholder,
+  .formulario-contacto input[type="email"]::placeholder,
+  .formulario-contacto textarea::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.95rem;
+  }
+
+  .formulario-contacto input[type="text"]:focus,
+  .formulario-contacto input[type="email"]:focus,
+  .formulario-contacto textarea:focus {
+    border-bottom-color: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Botón enviar sin cambios */
+  .formulario-contacto button[type="submit"] {
+    align-self: flex-start;
+  }
+</style>
 </head>
-
 <body>
-    <!--seccion de inicio-->
-    <section class="inicio" id="inicio">
-        <div class="contenido-seccion">
-            <header>
-                <div class="overlay" id="overlay"></div>
 
-                <div class="nav-bar" onclick="mostrarOcultarMenu()">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-                <nav id="nav" class="nav">
-                    <a href="#inicio">Inicio</a>
-                    <a href="#sobremi">Sobre mí</a>
-                    <a href="#habilidades">Habilidades</a>
-                    <a href="#resumen">Resumen</a>
-                    <a href="#contacto">Contacto</a>
-                </nav>
-                <div class="logo">
-                    <span class="color">R</span>
-                    <span>F</span>
-                    <span class="color">J</span>
-                </div>
-                <h2 class="nombre-completo">Desarrollador full stack</h2>
+<!--seccion de inicio-->
+<section class="inicio" id="inicio">
+  <div class="contenido-seccion">
+    <header>
+      <div class="overlay" id="overlay"></div>
+      <div class="nav-bar" onclick="mostrarOcultarMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <nav id="nav" class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobremi">Sobre mí</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#resumen">Resumen</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="logo">
+        <span class="color">R</span>
+        <span>F</span>
+        <span class="color">J</span>
+      </div>
+      <h2 class="nombre-completo">Desarrollador full stack</h2>
+    </header>
 
-            </header>
-            <div class="info">
-                <h1>REINALDO FABIAN JAVIER</h1>
-                <h2> DESARROLADOR WEB & PROGRAMADOR </h2>
-                <div class="redes">
-                    <a href="https://twitter.com/javierfabian211" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.facebook.com/fabianjavier2107" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/javierfabian210786/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/fabian-javier-208ba6256/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://ar.pinterest.com/javierfabian210786/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
-                </div>
-            </div>
-            <div class="foto">
-                <img src="assets\20220613_230856.jpg" alt="foto de fabian">
-            </div>
+    <div class="info">
+      <h1>REINALDO FABIAN JAVIER</h1>
+      <h2> DESARROLADOR WEB & PROGRAMADOR </h2>
+      <div class="redes">
+        <a href="https://twitter.com/javierfabian211" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.facebook.com/fabianjavier2107" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/javierfabian210786/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/fabian-javier-208ba6256/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://ar.pinterest.com/javierfabian210786/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
+      </div>
+    </div>
+
+    <div class="foto">
+      <img src="assets\20220613_230856.jpg" alt="foto de fabian">
+    </div>
+  </div>
+</section>
+
+<!--seccion sobre mi-->
+<section class="sobremi" id="sobremi">
+  <div class="contenido-seccion">
+    <h2 class="titulo-seccion">Sobre Mi</h2>
+    <h3>Detalles personales</h3>
+    <p class="especial">Me he esforzado mucho en preparame para este mundo en crecimiento que es el desarrollo web, junto a los mejores educadores en el area, lo he conseguido, espero poder cubrir las expectativas y seguir creciendo.</p>
+    <p>"El saber no ocupa lugar"</p>
+    <div class="fila">
+      <div class="col">
+        <i class="fa-solid fa-user"></i>
+        <span class="titulo-detalle">Perfil</span>
+        <p>Observador, Sencillo, siempre buscando mas capacitacíon.</p>
+      </div>
+      <div class=" col ">
+        <a href="https://www.google.com/maps/place/27%C2%B027'57.3%22S+55%C2%B053'06.9%22W/@-27.4522247,-55.8851472,14z/data=!4m4!3m3!8m2!3d-27.465909!4d-55.885253?hl=es" target="_blank"><i class="fa-solid fa-location-pin"></i></a>
+        <span class=" titulo-detalle ">Ubicacion</span>
+        <p>Barrio Santa Helena del municipio de Garupa, departamento Capital, provincia de Misiones, Argentina.</p>
+      </div>
+      <div class="col ">
+        <i class="fa-solid fa-flag "></i>
+        <span class="titulo-detalle">Intereses</span>
+        <p>Seguir aprendiendo y aplicar los conocimientos adquiridos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- seccion habilidades-->
+<section class="habilidades" id="habilidades">
+  <div class="contenido-seccion">
+    <h2 class="titulo-seccion">Mis habilidades</h2>
+    <h3>conocimientos en</h3>
+    <div class="fila">
+      <div class="col">
+        <span>HTML</span>
+        <div class="cont-barra ">
+          <div class="barra" id="html"></div>
+          <span>98%</span>
         </div>
-    </section>
-
-    <!--seccion sobre mi-->
-    <section class="sobremi" id="sobremi">
-        <div class="contenido-seccion">
-            <h2 class="titulo-seccion">Sobre Mi</h2>
-            <h3>Detalles personales</h3>
-
-
-            <p class="especial">Me he esforzado mucho en preparame para este mundo en crecimiento que es el desarrollo web, junto a los mejores educadores en el area, lo he conseguido, espero poder cubrir las expectativas y seguir creciendo.</p>
-            <p>"El saber no ocupa lugar"</p>
-
-            <div class="fila">
-                <div class="col">
-                    <i class="fa-solid fa-user"></i>
-                    <span class="titulo-detalle">Perfil</span>
-                    <p>Observador, Sencillo, siempre buscando mas capacitacíon.</p>
-                </div>
-                <div class=" col ">
-                    <a href="https://www.google.com/maps/place/27%C2%B027'57.3%22S+55%C2%B053'06.9%22W/@-27.4522247,-55.8851472,14z/data=!4m4!3m3!8m2!3d-27.465909!4d-55.885253?hl=es" target="_blank"><i class="fa-solid fa-location-pin"></i></a>
-                    <span class=" titulo-detalle ">Ubicacion</span>
-                    <p>Barrio Santa Helena del municipio de Garupa, departamento Capital, provincia de Misiones, Argentina.</p>
-                </div>
-                <div class="col ">
-                    <i class="fa-solid fa-flag "></i>
-                    <span class="titulo-detalle">Intereses</span>
-                    <p>Seguir aprendiendo y aplicar los conocimientos adquiridos.</p>
-                </div>
-            </div>
+      </div>
+      <div class="col">
+        <span>JAVASCRIPT</span>
+        <div class="cont-barra">
+          <div class="barra" id="javascript"></div>
+          <span>70%</span>
         </div>
-    </section>
-    <!-- seccion habilidades-->
-    <section class="habilidades" id="habilidades">
-        <div class="contenido-seccion">
-            <h2 class="titulo-seccion">Mis habilidades</h2>
-            <h3>conocimientos en</h3>
-
-
-            <div class="fila">
-                <div class="col">
-                    <span>HTML</span>
-                    <div class="cont-barra ">
-                        <div class="barra" id="html">
-                        </div>
-                        <span>98%</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <span>JAVASCRIPT</span>
-                    <div class="cont-barra">
-                        <div class="barra" id="javascript">
-                        </div>
-                        <span>70%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="fila">
-                <div class="col">
-                    <span>SEGURIDAD INFORMATICA</span>
-                    <div class="cont-barra">
-                        <div class="barra" id="seguridadinformatica">
-                        </div>
-                        <span>90%</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <span>REDES</span>
-                    <div class="cont-barra">
-                        <div class="barra" id="redes">
-                        </div>
-                        <span>85%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="fila">
-                <div class="col">
-                    <span>CSS</span>
-                    <div class="cont-barra">
-                        <div class="barra" id="css1">
-                        </div>
-                        <span>95%</span>
-                    </div>
-                </div>
-                <div class="col">
-                    <span>RUBY</span>
-                    <div class="cont-barra">
-                        <div class="barra" id="ruby">
-                        </div>
-                        <span>75%</span>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+    <div class="fila">
+      <div class="col">
+        <span>SEGURIDAD INFORMATICA</span>
+        <div class="cont-barra">
+          <div class="barra" id="seguridadinformatica"></div>
+          <span>90%</span>
         </div>
-    </section>
-
-    <!--seccion de resumen-->
-    <section class="resumen" id="resumen">
-        <div class="contenido-seccion">
-            <h2 class="titulo-seccion">Resumen</h2>
-            <h3>Mi preparacion y experiencia</h3>
-            <div class="info">
-                <div class="col">
-                    <span class="titulo">Educación</span>
-                    <table>
-                        <tr>
-                            <td class="datos">
-                                <h3>2016 - 2018</h3>
-                            </td>
-                            <td rowspan="2" class="descripcion">
-                                Manejo de la pc y sus herramientas, especializado en seguridad tanto publica como a nivel informatico.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4>Tec. Superior en Seguridad Pública con orientacion en informatica</h4>
-                                <p>InsFoTeP</p>
-                                <span class="promedio">9.50 PG</span>
-                            </td>
-                        </tr>
-                    </table>
-                    <table>
-                        <tr>
-                            <td class="datos">
-                                <h3>2022 - 2023</h3>
-                            </td>
-                            <td rowspan="2" class="descripcion">
-                                conocimiento en programacion basica, desarrollo web fornt-end.
-                                (Js,Html,Css,Ruby,Gobstones,Davinci)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4>desarrollador web front-end</h4>
-                                <p>Silicon Misiones</p>
-                                <p>Argentina Programa 4.0</p>
-                                <span class="promedio">---</span>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col">
-                    <span class="titulo">Experiencia Laboral</span>
-                    <table>
-                        <tr>
-                            <td class="datos">
-                                <h3> Año 2022 </h3>
-                            </td>
-                            <td rowspan="2" class="descripcion">
-                                mantenimiento de paginas web y analisis de programas y plataformas.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4>Policia de Misiones</h4>
-                                <p>desarrollador web y programador junior</p>
-                            </td>
-                        </tr>
-                    </table>
-                    <table>
-                        <tr>
-                            <td class="datos">
-                                <h3>Año 2023</h3>
-                            </td>
-                            <td rowspan="2" class="descripcion">
-                               creador de paginas y CV digital de manera independiente.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4>Misiones-Advance</h4>
-                                <p>creator</p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+      </div>
+      <div class="col">
+        <span>REDES</span>
+        <div class="cont-barra">
+          <div class="barra" id="redes"></div>
+          <span>85%</span>
         </div>
-    </section>
-    <!--SECCION DE CONTACTO-->
-<!-- SECCION DE CONTACTO -->
+      </div>
+    </div>
+    <div class="fila">
+      <div class="col">
+        <span>CSS</span>
+        <div class="cont-barra">
+          <div class="barra" id="css1"></div>
+          <span>95%</span>
+        </div>
+      </div>
+      <div class="col">
+        <span>RUBY</span>
+        <div class="cont-barra">
+          <div class="barra" id="ruby"></div>
+          <span>75%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--seccion de resumen-->
+<section class="resumen" id="resumen">
+  <div class="contenido-seccion">
+    <h2 class="titulo-seccion">Resumen</h2>
+    <h3>Mi preparacion y experiencia</h3>
+    <div class="info">
+      <div class="col">
+        <span class="titulo">Educación</span>
+        <table>
+          <tr>
+            <td class="datos"><h3>2016 - 2018</h3></td>
+            <td rowspan="2" class="descripcion">Manejo de la pc y sus herramientas, especializado en seguridad tanto publica como a nivel informatico.</td>
+          </tr>
+          <tr>
+            <td>
+              <h4>Tec. Superior en Seguridad Pública con orientacion en informatica</h4>
+              <p>InsFoTeP</p>
+              <span class="promedio">9.50 PG</span>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td class="datos"><h3>2022 - 2023</h3></td>
+            <td rowspan="2" class="descripcion">conocimiento en programacion basica, desarrollo web fornt-end. (Js,Html,Css,Ruby,Gobstones,Davinci)</td>
+          </tr>
+          <tr>
+            <td>
+              <h4>desarrollador web front-end</h4>
+              <p>Silicon Misiones</p>
+              <p>Argentina Programa 4.0</p>
+              <span class="promedio">---</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col">
+        <span class="titulo">Experiencia Laboral</span>
+        <table>
+          <tr>
+            <td class="datos"><h3> Año 2022 </h3></td>
+            <td rowspan="2" class="descripcion">mantenimiento de paginas web y analisis de programas y plataformas.</td>
+          </tr>
+          <tr>
+            <td>
+              <h4>Policia de Misiones</h4>
+              <p>desarrollador web y programador junior</p>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td class="datos"><h3>Año 2023</h3></td>
+            <td rowspan="2" class="descripcion">creador de paginas y CV digital de manera independiente.</td>
+          </tr>
+          <tr>
+            <td>
+              <h4>Misiones-Advance</h4>
+              <p>creator</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--SECCION DE CONTACTO-->
 <section class="contacto" id="contacto">
   <div class="contenido-seccion">
     <h2 class="titulo-seccion">Contacto</h2>
     <h3>Ponte en contacto ahora mismo!</h3>
-
     <div class="fila">
       <div class="col">
-        <div class="icono">
-          <i class="fa-solid fa-phone"></i>
-        </div>
+        <div class="icono"><i class="fa-solid fa-phone"></i></div>
         <h2>Teléfono</h2>
         <a class="info-contacto" href="https://wa.me/543764288102" target="_blank" rel="noopener noreferrer">03764 - 288102</a>
       </div>
       <div class="col">
-        <div class="icono">
-          <i class="fa-solid fa-envelope"></i>
-        </div>
+        <div class="icono"><i class="fa-solid fa-envelope"></i></div>
         <h2>Correo</h2>
         <span class="info-contacto"><span class="oculto">@</span>gmail.com</span>
       </div>
       <div class="col">
-        <div class="icono">
-          <i class="fa-solid fa-globe"></i>
-        </div>
+        <div class="icono"><i class="fa-solid fa-globe"></i></div>
         <h2>Página Web</h2>
         <span class="info-contacto">www.misiones-advance.com</span>
       </div>
@@ -263,91 +319,73 @@
   </div>
 </section>
 
-
-    <!-- Formulario de contacto -->
+<!-- Formulario de contacto — FIX: labels ocultos, placeholders dentro de cada campo -->
 <form id="contactForm" class="formulario-contacto">
   <div class="form-row">
     <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="from_name" required>
+    <input type="text" id="nombre" name="from_name" placeholder="Nombre" required>
   </div>
-
   <div class="form-row">
     <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="from_email" required>
+    <input type="email" id="email" name="from_email" placeholder="Correo electrónico" required>
   </div>
-
   <div class="form-row">
     <label for="message">Mensaje:</label>
-    <textarea name="message" id="message" rows="5" required></textarea>
+    <textarea name="message" id="message" rows="5" placeholder="Mensaje" required></textarea>
   </div>
-
   <div class="form-row">
     <button type="submit" id="button">Enviar</button>
   </div>
-
   <p id="formMessage"></p>
 </form>
 
-
-
 <script src="app/apps.js"></script>
+
 <!-- Animación de iconos de redes sociales -->
 <script>
-  // Animación para íconos de redes
-  document.querySelectorAll('.redes a').forEach(link => {
-    const icon = link.querySelector('i');
-    link.addEventListener('mouseenter', () => {
-      icon.classList.add('rebote');
-    });
-    link.addEventListener('mouseleave', () => {
-      icon.classList.remove('rebote');
-    });
-  });
-
-  // Animación para íconos de la sección "Sobre mí"
-  document.querySelectorAll('.sobremi .col i').forEach(icon => {
-    icon.addEventListener('mouseenter', () => {
-      icon.classList.add('rebote');
-    });
-    icon.addEventListener('mouseleave', () => {
-      icon.classList.remove('rebote');
-    });
-  });
+document.querySelectorAll('.redes a').forEach(link => {
+  const icon = link.querySelector('i');
+  link.addEventListener('mouseenter', () => { icon.classList.add('rebote'); });
+  link.addEventListener('mouseleave', () => { icon.classList.remove('rebote'); });
+});
+document.querySelectorAll('.sobremi .col i').forEach(icon => {
+  icon.addEventListener('mouseenter', () => { icon.classList.add('rebote'); });
+  icon.addEventListener('mouseleave', () => { icon.classList.remove('rebote'); });
+});
 </script>
-<script>
-  const iniciales = document.querySelectorAll('.logo span');
-  const nombreCompleto = document.querySelector('.inicio .contenido-seccion .info h1');
 
-  iniciales.forEach((letra, index) => {
-    setTimeout(() => {
-      letra.classList.add('visible');
-      // Cuando termina la última inicial, mostramos el nombre completo
-      if (index === iniciales.length - 1) {
-        setTimeout(() => {
-          nombreCompleto.classList.add('visible');
-        }, 1000);
-      }
-    }, index * 700);
-  });
+<script>
+const iniciales = document.querySelectorAll('.logo span');
+const nombreCompleto = document.querySelector('.inicio .contenido-seccion .info h1');
+
+iniciales.forEach((letra, index) => {
+  setTimeout(() => {
+    letra.classList.add('visible');
+    // Cuando termina la última inicial, mostramos el nombre completo
+    if (index === iniciales.length - 1) {
+      setTimeout(() => {
+        nombreCompleto.classList.add('visible');
+      }, 1000);
+    }
+  }, index * 700);
+});
 </script>
 
 <!-- Animación para enlaces del menú -->
-
 <script>
-  const enlaces = document.querySelectorAll('nav.nav a');
-
-  enlaces.forEach((link, index) => {
-    setTimeout(() => {
-      link.classList.add('visible');
-    }, index * 300); // cada enlace aparece con un pequeño retraso
-  });
+const enlaces = document.querySelectorAll('nav.nav a');
+enlaces.forEach((link, index) => {
+  setTimeout(() => {
+    link.classList.add('visible');
+  }, index * 300);
+});
 </script>
+
 <!-- Función para mostrar/ocultar el menú en dispositivos móviles -->
 <script>
 function mostrarOcultarMenu() {
   const nav = document.getElementById("nav");
   const overlay = document.getElementById("overlay");
-
   if (nav.classList.contains("mostrar")) {
     nav.classList.remove("mostrar");
     overlay.classList.remove("mostrar");
@@ -356,47 +394,35 @@ function mostrarOcultarMenu() {
     overlay.classList.add("mostrar");
   }
 }
-
-// Cerrar menú si se hace clic en el overlay
 document.getElementById("overlay").addEventListener("click", () => {
   document.getElementById("nav").classList.remove("mostrar");
   document.getElementById("overlay").classList.remove("mostrar");
 });
 </script>
+
 <p class="derechos">© 2026 Reinaldo Fabian Javier. Todos los derechos reservados.</p>
 
 <!----Integración de EmailJS para el formulario de contacto-->
-
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  // Inicializa con tu Public Key
-  emailjs.init('B3XG0w0IeMegseRhd');
-
-  const btn = document.getElementById('button');
-
-  document.getElementById('contactForm')
-    .addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      btn.textContent = 'Enviando...';
-
-      const serviceID = 'default_service';   // <-- reemplazá con tu Service ID real
-      const templateID = 'template_0mbse7d'; // <-- este es el Template ID correcto
-
-      emailjs.sendForm(serviceID, templateID, this)
-        .then(() => {
-          btn.textContent = 'Enviar';
-          document.getElementById('formMessage').textContent = '✅ Mensaje enviado correctamente';
-          this.reset();
-        }, (err) => {
-          btn.textContent = 'Enviar';
-          document.getElementById('formMessage').textContent = '❌ Error al enviar: ' + JSON.stringify(err);
-        });
+emailjs.init('B3XG0w0IeMegseRhd');
+const btn = document.getElementById('button');
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  btn.textContent = 'Enviando...';
+  const serviceID = 'default_service';
+  const templateID = 'template_0mbse7d';
+  emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.textContent = 'Enviar';
+      document.getElementById('formMessage').textContent = '✅ Mensaje enviado correctamente';
+      this.reset();
+    }, (err) => {
+      btn.textContent = 'Enviar';
+      document.getElementById('formMessage').textContent = '❌ Error al enviar: ' + JSON.stringify(err);
     });
+});
 </script>
 
-
-
 </body>
-
 </html>
