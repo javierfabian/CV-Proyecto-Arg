@@ -8,98 +8,6 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <title>RFJ - WEB DEVELOPER</title>
-
-<style>
-  /* =============================================
-     FIX 1: Nombre superpuesto
-     El h1 y h2.nombre-completo estaban colisionando
-     durante la animación. Se asegura z-index y
-     visibilidad controlada.
-  ============================================= */
-
-  /* El h1 dentro de .info empieza invisible y aparece
-     cuando JS le agrega la clase .visible */
-  .inicio .info h1 {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  .inicio .info h1.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* El .logo y .nombre-completo en el header no deben
-     solaparse con el bloque .info del hero */
-  .inicio header {
-    position: relative;
-    z-index: 10;
-  }
-  .inicio .info {
-    position: relative;
-    z-index: 5;
-  }
-
-  /* =============================================
-     FIX 2: Formulario con placeholders internos
-     Se eliminan los <label> externos y se reemplaza
-     por inputs con placeholder + estilo transparente
-  ============================================= */
-
-  .formulario-contacto {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-
-  .form-row {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Se ocultan los label originales para usar solo placeholder */
-  .form-row label {
-    display: none;
-  }
-
-  .formulario-contacto input[type="text"],
-  .formulario-contacto input[type="email"],
-  .formulario-contacto textarea {
-    background: transparent;
-    border: none;
-    border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
-    color: #fff;
-    font-size: 1rem;
-    padding: 12px 4px;
-    width: 100%;
-    outline: none;
-    border-radius: 0;
-    transition: border-color 0.3s ease;
-    font-family: inherit;
-    resize: vertical;
-  }
-
-  .formulario-contacto input[type="text"]::placeholder,
-  .formulario-contacto input[type="email"]::placeholder,
-  .formulario-contacto textarea::placeholder {
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 0.95rem;
-  }
-
-  .formulario-contacto input[type="text"]:focus,
-  .formulario-contacto input[type="email"]:focus,
-  .formulario-contacto textarea:focus {
-    border-bottom-color: rgba(255, 255, 255, 0.95);
-  }
-
-  /* Botón enviar sin cambios */
-  .formulario-contacto button[type="submit"] {
-    align-self: flex-start;
-  }
-</style>
 </head>
 <body>
 
@@ -125,10 +33,9 @@
       </div>
       <h2 class="nombre-completo">Desarrollador full stack</h2>
     </header>
-
     <div class="info">
       <h1>REINALDO FABIAN JAVIER</h1>
-      <h2> DESARROLADOR WEB & PROGRAMADOR </h2>
+      <h2>DESARROLADOR WEB & PROGRAMADOR</h2>
       <div class="redes">
         <a href="https://twitter.com/javierfabian211" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
         <a href="https://www.facebook.com/fabianjavier2107" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
@@ -137,7 +44,6 @@
         <a href="https://ar.pinterest.com/javierfabian210786/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
       </div>
     </div>
-
     <div class="foto">
       <img src="assets\20220613_230856.jpg" alt="foto de fabian">
     </div>
@@ -157,13 +63,13 @@
         <span class="titulo-detalle">Perfil</span>
         <p>Observador, Sencillo, siempre buscando mas capacitacíon.</p>
       </div>
-      <div class=" col ">
+      <div class="col">
         <a href="https://www.google.com/maps/place/27%C2%B027'57.3%22S+55%C2%B053'06.9%22W/@-27.4522247,-55.8851472,14z/data=!4m4!3m3!8m2!3d-27.465909!4d-55.885253?hl=es" target="_blank"><i class="fa-solid fa-location-pin"></i></a>
-        <span class=" titulo-detalle ">Ubicacion</span>
+        <span class="titulo-detalle">Ubicacion</span>
         <p>Barrio Santa Helena del municipio de Garupa, departamento Capital, provincia de Misiones, Argentina.</p>
       </div>
-      <div class="col ">
-        <i class="fa-solid fa-flag "></i>
+      <div class="col">
+        <i class="fa-solid fa-flag"></i>
         <span class="titulo-detalle">Intereses</span>
         <p>Seguir aprendiendo y aplicar los conocimientos adquiridos.</p>
       </div>
@@ -179,49 +85,31 @@
     <div class="fila">
       <div class="col">
         <span>HTML</span>
-        <div class="cont-barra ">
-          <div class="barra" id="html"></div>
-          <span>98%</span>
-        </div>
+        <div class="cont-barra"><div class="barra" id="html"></div><span>98%</span></div>
       </div>
       <div class="col">
         <span>JAVASCRIPT</span>
-        <div class="cont-barra">
-          <div class="barra" id="javascript"></div>
-          <span>70%</span>
-        </div>
+        <div class="cont-barra"><div class="barra" id="javascript"></div><span>70%</span></div>
       </div>
     </div>
     <div class="fila">
       <div class="col">
         <span>SEGURIDAD INFORMATICA</span>
-        <div class="cont-barra">
-          <div class="barra" id="seguridadinformatica"></div>
-          <span>90%</span>
-        </div>
+        <div class="cont-barra"><div class="barra" id="seguridadinformatica"></div><span>90%</span></div>
       </div>
       <div class="col">
         <span>REDES</span>
-        <div class="cont-barra">
-          <div class="barra" id="redes"></div>
-          <span>85%</span>
-        </div>
+        <div class="cont-barra"><div class="barra" id="redes"></div><span>85%</span></div>
       </div>
     </div>
     <div class="fila">
       <div class="col">
         <span>CSS</span>
-        <div class="cont-barra">
-          <div class="barra" id="css1"></div>
-          <span>95%</span>
-        </div>
+        <div class="cont-barra"><div class="barra" id="css1"></div><span>95%</span></div>
       </div>
       <div class="col">
         <span>RUBY</span>
-        <div class="cont-barra">
-          <div class="barra" id="ruby"></div>
-          <span>75%</span>
-        </div>
+        <div class="cont-barra"><div class="barra" id="ruby"></div><span>75%</span></div>
       </div>
     </div>
   </div>
@@ -267,7 +155,7 @@
         <span class="titulo">Experiencia Laboral</span>
         <table>
           <tr>
-            <td class="datos"><h3> Año 2022 </h3></td>
+            <td class="datos"><h3>Año 2022</h3></td>
             <td rowspan="2" class="descripcion">mantenimiento de paginas web y analisis de programas y plataformas.</td>
           </tr>
           <tr>
@@ -303,7 +191,7 @@
       <div class="col">
         <div class="icono"><i class="fa-solid fa-phone"></i></div>
         <h2>Teléfono</h2>
-        <a class="info-contacto" href="https://wa.me/543764288102" target="_blank" rel="noopener noreferrer">WHATSAPP</a>
+        <a class="info-contacto" href="https://wa.me/543764288102" target="_blank" rel="noopener noreferrer">03764 - 288102</a>
       </div>
       <div class="col">
         <div class="icono"><i class="fa-solid fa-envelope"></i></div>
@@ -316,32 +204,59 @@
         <span class="info-contacto">www.misiones-advance.com</span>
       </div>
     </div>
+
+    <!-- FORMULARIO: 100% dentro de section.contacto con estilos inline -->
+    <form id="contactForm"
+      style="display:flex;flex-direction:column;gap:0;max-width:560px;width:100%;margin:40px auto 0 auto;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:36px 32px;box-sizing:border-box;">
+
+      <!-- Nombre -->
+      <div style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,0.2);padding:12px 0;">
+        <i class="fa-solid fa-user" style="color:#940253;font-size:15px;width:16px;flex-shrink:0;"></i>
+        <input type="text" name="from_name" id="nombre" placeholder="Nombre" required
+          style="flex:1;background:transparent;border:none;outline:none;color:#ffffff;font-size:1rem;font-family:'Titillium Web',sans-serif;padding:0;min-height:28px;">
+      </div>
+
+      <!-- Correo -->
+      <div style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,0.2);padding:12px 0;">
+        <i class="fa-solid fa-envelope" style="color:#940253;font-size:15px;width:16px;flex-shrink:0;"></i>
+        <input type="email" name="from_email" id="email" placeholder="Correo electrónico" required
+          style="flex:1;background:transparent;border:none;outline:none;color:#ffffff;font-size:1rem;font-family:'Titillium Web',sans-serif;padding:0;min-height:28px;">
+      </div>
+
+      <!-- Mensaje -->
+      <div style="display:flex;align-items:flex-start;gap:12px;border-bottom:1px solid rgba(255,255,255,0.2);padding:12px 0;">
+        <i class="fa-solid fa-comment" style="color:#940253;font-size:15px;width:16px;flex-shrink:0;margin-top:4px;"></i>
+        <textarea name="message" id="message" rows="5" placeholder="Mensaje" required
+          style="flex:1;background:transparent;border:none;outline:none;color:#ffffff;font-size:1rem;font-family:'Titillium Web',sans-serif;padding:0;resize:vertical;min-height:100px;"></textarea>
+      </div>
+
+      <!-- Botón -->
+      <div style="display:flex;justify-content:center;padding-top:24px;">
+        <button type="submit" id="button"
+          style="display:inline-flex;align-items:center;gap:10px;background-color:#940253;color:#fff;font-family:'Titillium Web',sans-serif;font-size:1rem;font-weight:bold;letter-spacing:0.1em;text-transform:uppercase;padding:12px 44px;border:none;border-radius:8px;cursor:pointer;transition:background 0.3s;">
+          <i class="fa-solid fa-paper-plane"></i> Enviar
+        </button>
+      </div>
+
+      <p id="formMessage" style="text-align:center;color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:14px;min-height:20px;"></p>
+    </form>
+
+    <!-- placeholder color via style tag — única forma cross-browser -->
+    <style>
+      #contactForm input::placeholder,
+      #contactForm textarea::placeholder { color: rgba(255,255,255,0.38); }
+      #contactForm button:hover { background-color: #6a013c !important; box-shadow: 0 0 18px rgba(148,2,83,0.5); }
+    </style>
+
   </div>
 </section>
 
-<!-- Formulario de contacto — FIX: labels ocultos, placeholders dentro de cada campo -->
-<form id="contactForm" class="formulario-contacto">
-  <div class="form-row">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="from_name" placeholder="Nombre" required>
-  </div>
-  <div class="form-row">
-    <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="from_email" placeholder="Correo electrónico" required>
-  </div>
-  <div class="form-row">
-    <label for="message">Mensaje:</label>
-    <textarea name="message" id="message" rows="5" placeholder="Mensaje" required></textarea>
-  </div>
-  <div class="form-row">
-    <button type="submit" id="button">Enviar</button>
-  </div>
-  <p id="formMessage"></p>
-</form>
+<p class="derechos" style="text-align:center;padding:20px;background:#111;color:rgba(255,255,255,0.4);font-size:0.85rem;">
+  © 2026 Reinaldo Fabian Javier. Todos los derechos reservados.
+</p>
 
 <script src="app/apps.js"></script>
 
-<!-- Animación de iconos de redes sociales -->
 <script>
 document.querySelectorAll('.redes a').forEach(link => {
   const icon = link.querySelector('i');
@@ -357,31 +272,23 @@ document.querySelectorAll('.sobremi .col i').forEach(icon => {
 <script>
 const iniciales = document.querySelectorAll('.logo span');
 const nombreCompleto = document.querySelector('.inicio .contenido-seccion .info h1');
-
 iniciales.forEach((letra, index) => {
   setTimeout(() => {
     letra.classList.add('visible');
-    // Cuando termina la última inicial, mostramos el nombre completo
     if (index === iniciales.length - 1) {
-      setTimeout(() => {
-        nombreCompleto.classList.add('visible');
-      }, 1000);
+      setTimeout(() => { nombreCompleto.classList.add('visible'); }, 1000);
     }
   }, index * 700);
 });
 </script>
 
-<!-- Animación para enlaces del menú -->
 <script>
 const enlaces = document.querySelectorAll('nav.nav a');
 enlaces.forEach((link, index) => {
-  setTimeout(() => {
-    link.classList.add('visible');
-  }, index * 300);
+  setTimeout(() => { link.classList.add('visible'); }, index * 300);
 });
 </script>
 
-<!-- Función para mostrar/ocultar el menú en dispositivos móviles -->
 <script>
 function mostrarOcultarMenu() {
   const nav = document.getElementById("nav");
@@ -400,9 +307,6 @@ document.getElementById("overlay").addEventListener("click", () => {
 });
 </script>
 
-<p class="derechos">© 2026 Reinaldo Fabian Javier. Todos los derechos reservados.</p>
-
-<!----Integración de EmailJS para el formulario de contacto-->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 emailjs.init('B3XG0w0IeMegseRhd');
