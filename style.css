@@ -1,6 +1,6 @@
 /*importamos fuentes*/
-
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&family=Yellowtail&display=swap');
+
 * {
     font-family: "Titillium Web";
     margin: 0;
@@ -11,9 +11,7 @@ html {
     scroll-behavior: smooth;
 }
 
-
 /*INICIO*/
-
 .inicio {
     background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("desk-g7beb49bf4_1280.jpg");
     background-size: cover;
@@ -32,30 +30,21 @@ html {
     padding: 30px;
 }
 
-
 /* menu lateral*/
-
-/* Estado inicial: oculto y desplazado */
 nav.nav a {
   opacity: 0;
   transform: translateY(-20px);
   transition: all 0.6s ease;
 }
-
-/* Estado visible: aparece con efecto */
 nav.nav a.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Hover con efecto de zoom y glow */
 nav.nav a:hover {
   color: #940253;
   text-shadow: 0 0 10px #fff, 0 0 20px #940253;
   transform: scale(1.1);
 }
-
-
 
 .inicio .contenido-seccion header nav.mostrar {
     display: block;
@@ -83,7 +72,6 @@ nav.nav a:hover {
   text-shadow: 0 0 15px #fff, 0 0 30px #940253, 0 0 60px #940253;
 }
 
-
 .inicio .contenido-seccion header .nav-bar {
     position: fixed;
     background-color: #940253;
@@ -103,6 +91,7 @@ nav.nav a:hover {
 .inicio .contenido-seccion .info {
     padding-bottom: 130px;
 }
+
 .inicio .contenido-seccion .info h1 {
   font-family: "Titillium Web";
   font-size: 3rem;
@@ -118,13 +107,13 @@ nav.nav a:hover {
   text-shadow: 0 0 20px #fff, 0 0 40px #940253;
 }
 
-
 .inicio .contenido-seccion .info h2 {
     font-weight: normal;
     font-size: 20px;
     margin-top: -10px;
     letter-spacing: 2px;
 }
+
 .inicio .contenido-seccion .info .redes {
   display: flex;
   justify-content: center;
@@ -140,8 +129,8 @@ nav.nav a:hover {
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background-color: #940253;   /* fondo violeta */
-  color: #fff;                 /* ícono blanco */
+  background-color: #940253;
+  color: #fff;
   font-size: 24px;
   transition: all 0.3s ease;
   box-shadow: 0 0 12px rgba(148, 2, 83, 0.4);
@@ -152,7 +141,6 @@ nav.nav a:hover {
   box-shadow: 0 0 25px #fff;
 }
 
-/* Animación rebote */
 .redes a i.rebote {
   animation: bounce 0.6s ease infinite;
 }
@@ -163,7 +151,6 @@ nav.nav a:hover {
 }
 
 /* foto de perfil*/
-
 .inicio .contenido-seccion .foto {
     position: relative;
 }
@@ -178,17 +165,13 @@ nav.nav a:hover {
     transform: translateX(-50%);
 }
 
-
 /* generale styles*/
-
 .titulo-seccion {
     font-family: "Yellowtail";
     font-size: 1.5rem;
 }
 
-
 /*seccion sobre mi*/
-
 .sobremi {
     background-color: #e6e6e6;
     padding: 140px 0 100px 0;
@@ -228,7 +211,6 @@ nav.nav a:hover {
     width: 30%;
 }
 
-/* Íconos de la sección Sobre mí */
 .sobremi .contenido-seccion .fila .col i {
   color: #940253;
   display: inline-flex;
@@ -242,16 +224,9 @@ nav.nav a:hover {
   transition: all 0.3s ease;
 }
 
-/* Animación rebote */
 .sobremi .contenido-seccion .fila .col i.rebote {
   animation: bounce 0.6s ease infinite;
 }
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px) scale(1.2); }
-}
-
 
 .sobremi .contenido-seccion .fila .col span {
     display: block;
@@ -259,9 +234,7 @@ nav.nav a:hover {
     margin: 8px 0;
 }
 
-
 /* seccion habilidades*/
-
 .habilidades {
     padding: 80px 0 100px 0;
     text-align: center;
@@ -313,11 +286,7 @@ nav.nav a:hover {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-
-
-
 /* seccion resumen*/
-
 .resumen {
     background-color: #e6e6e6;
     padding: 140px 0 100px 0;
@@ -373,14 +342,13 @@ nav.nav a:hover {
     margin-bottom: 5px;
 }
 
-/* Desktop (pantallas grandes) */
+/* Desktop */
 @media (min-width: 769px) {
     .inicio .contenido-seccion header .nav-bar {
         display: none;
     }
-
     .inicio .contenido-seccion header nav {
-        position: absolute;   /* lo fijamos en la esquina */
+        position: absolute;
         top: 20px;
         left: 20px;
         margin: 0;
@@ -390,9 +358,8 @@ nav.nav a:hover {
         display: flex !important;
         gap: 25px;
         width: auto;
-        z-index: 100;         /* asegura que quede por encima */
+        z-index: 100;
     }
-
     .inicio .contenido-seccion header nav a {
         display: inline-block;
         margin: 0;
@@ -401,8 +368,6 @@ nav.nav a:hover {
         position: relative;
         transition: all 0.3s ease;
     }
-
-    /* Subrayado animado en hover */
     .inicio .contenido-seccion header nav a::after {
         content: "";
         position: absolute;
@@ -413,32 +378,28 @@ nav.nav a:hover {
         background-color: #940253;
         transition: width 0.3s ease;
     }
-
     .inicio .contenido-seccion header nav a:hover::after {
         width: 100%;
     }
 }
-
 
 /* Tablets y móviles */
 @media (max-width: 768px) {
     .inicio .contenido-seccion header nav {
         position: absolute;
         top: 65px;
-        left: -300px;              /* oculto fuera de pantalla */
+        left: -300px;
         width: calc(100% - 30px);
         max-width: 250px;
         background-color: #940253;
         padding: 15px;
         border-radius: 10px;
-        transition: left 0.4s ease; /* animación slide-in */
-        z-index: 99; /* encima del overlay */
+        transition: left 0.4s ease;
+        z-index: 99;
     }
-
     .inicio .contenido-seccion header nav.mostrar {
-        left: 15px; /* se desliza hacia adentro */
+        left: 15px;
     }
-
     .inicio .contenido-seccion header nav a {
         display: block;
         margin: 12px 0;
@@ -446,83 +407,102 @@ nav.nav a:hover {
         font-weight: bold;
         transition: transform 0.3s ease;
     }
-
     .inicio .contenido-seccion header nav a:hover {
         transform: translateX(5px);
         text-shadow: 0 0 10px #fff, 0 0 20px #940253;
     }
 }
 
-/* Móviles pequeños */
 @media (max-width: 480px) {
     .inicio .contenido-seccion header nav {
         width: calc(100% - 30px);
         max-width: 220px;
     }
-
     .inicio .contenido-seccion header nav a {
         font-size: 16px;
     }
 }
 
-/* Overlay con blur */
+/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4); /* semitransparente */
-  backdrop-filter: blur(4px);  /* difuminado */
-  z-index: 98; /* debajo del menú */
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 98;
   display: none;
 }
-
 .overlay.mostrar {
   display: block;
 }
 
-/* seccion contacto*/
+/* ===========================
+   SECCION CONTACTO
+   =========================== */
+.contacto {
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("desk-g7beb49bf4_1280.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  color: #fff;
+  padding: 80px 0 60px 0;
+}
+
 .contacto .contenido-seccion {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
   text-align: center;
 }
 
-.contacto .titulo-seccion,
-.contacto h3 {
-  margin-bottom: 20px;
+.contacto .titulo-seccion {
+  color: #fff;
 }
 
+.contacto h3 {
+  margin-bottom: 20px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Bloques de info (teléfono, correo, web) */
 .contacto .fila {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
+  margin-bottom: 60px;
 }
 
 .contacto .col {
-  background: #fff;
-  border: 1px solid #ddd;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 20px;
-  flex: 1 1 220px;
-  max-width: 250px;
+  flex: 1 1 200px;
+  max-width: 230px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(4px);
 }
 
 .contacto .col:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 20px rgba(148,2,83,0.4);
 }
 
-/* Ícono circular */
 .contacto .icono {
   width: 60px;
   height: 60px;
   margin: 0 auto 15px;
   border-radius: 50%;
-  background-color: #940253; /* color de fondo */
+  background-color: #940253;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -533,79 +513,138 @@ nav.nav a:hover {
 .contacto .col h2 {
   margin-bottom: 10px;
   font-size: 18px;
-  color: #940253;
+  color: #fff;
 }
 
 .contacto .info-contacto {
   display: block;
   font-weight: bold;
   margin-top: 5px;
-  color: #333;
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
 }
 
 .contacto .info-contacto:hover {
-  color: #940253;
+  color: #fff;
 }
- /*Formulario de contacto */ 
 
+/* ===========================
+   FORMULARIO DE CONTACTO
+   (dentro de .contacto)
+   =========================== */
 .formulario-contacto {
-  display: grid;
-  grid-template-columns: 150px 1fr; /* etiquetas a la izquierda, campos a la derecha */
-  gap: 12px 20px;
-  max-width: 600px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 580px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 40px;
+  backdrop-filter: blur(6px);
 }
 
-.form-row {
-  display: contents; /* permite que cada label+campo ocupe su fila en la grid */
+/* Cada campo: ícono + input en fila */
+.campo-form {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 14px 0;
 }
 
-.formulario-contacto label {
-  font-weight: bold;
-  text-align: right;
-  padding-top: 8px;
+.campo-form--textarea {
+  align-items: flex-start;
 }
 
+.campo-form--boton {
+  border-bottom: none;
+  justify-content: center;
+  padding-top: 24px;
+}
+
+/* Ícono decorativo dentro del campo */
+.campo-icono {
+  color: #940253;
+  font-size: 16px;
+  width: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Inputs y textarea */
 .formulario-contacto input,
 .formulario-contacto textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  width: 100%;
-  box-sizing: border-box;
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: "Titillium Web", sans-serif;
+  letter-spacing: 0.04em;
+  padding: 0;
+  resize: vertical;
+  min-height: 28px;
 }
 
 .formulario-contacto textarea {
-  resize: vertical;
+  min-height: 100px;
 }
 
+/* Placeholder */
+.formulario-contacto input::placeholder,
+.formulario-contacto textarea::placeholder {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.95rem;
+}
+
+/* Botón enviar — mismo estilo que .icono de contacto */
 .formulario-contacto button {
-  grid-column: 2; /* botón alineado bajo los campos */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background-color: #940253;
   color: #fff;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1rem;
   font-weight: bold;
-  padding: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 40px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .formulario-contacto button:hover {
   background-color: #6a013c;
+  box-shadow: 0 0 20px rgba(148,2,83,0.6);
 }
 
 #formMessage {
-  grid-column: 2; /* mensaje de estado alineado bajo los campos */
-  margin-top: 8px;
-  font-size: 14px;
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  margin-top: 16px;
+  min-height: 20px;
 }
 
+/* Derechos */
+.derechos {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+}
 
-/* seccion responsive*/
-
-@media screen and (max-width:800px) {
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media screen and (max-width: 800px) {
     .habilidades .contenido-seccion .fila {
         display: block;
     }
@@ -615,6 +654,7 @@ nav.nav a:hover {
     }
     .habilidades .contenido-seccion .fila .col .cont-barra {
         justify-content: center;
+        margin: auto;
     }
     .sobremi .contenido-seccion .fila {
         display: block;
@@ -639,7 +679,15 @@ nav.nav a:hover {
         margin-top: 10px;
         margin-bottom: 30px;
     }
-    .contacto .contenido-seccion .fila {
-        display: block;
+    .contacto .fila {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contacto .col {
+        max-width: 100%;
+        width: 100%;
+    }
+    .formulario-contacto {
+        padding: 24px 16px;
     }
 }
